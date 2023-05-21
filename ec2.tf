@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
-resource "aws_instance" "name" {
-ami = "ami-0889a44b331db0194"
-key_name = "instance1"
-instance_type = "t2.micro"  
+resource "aws_instance" "variable_ec2" {
+ami = var.os_name
+key_name = var.key
+instance_type = var.instance_type  
 }
